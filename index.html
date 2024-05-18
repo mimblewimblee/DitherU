@@ -1,0 +1,184 @@
+<!DOCTYPE html><html>
+<head>
+	<meta charset="utf-8">
+	<title>Dithering_U</title>
+	<meta name="author"      content="Tommaso Aulopi, Giacomo Pisani">
+	<meta name="description" content="Titolo Pagina:Dither U">
+	<meta name="viewport"    content="width=device-width, initial-scale=1">
+	<link rel="icon"         href="./icons/Icona_2.png"  type="image/png">
+	<link rel="icon"         href="./icons/icon_256.png" type="image/png">
+	<link rel="manifest"     href="./manifest.json">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	
+<link rel="stylesheet"   href="./assets/css/menu.css">
+	
+	<style>
+	.navbar-custom {
+			background-color: black;
+			
+			
+		}
+		.navbar-custom a {
+			color: white;
+			
+		}
+		@font-face {
+			font-family: 'CustomFont';
+			src: url('assets/css/HalyardDis_ISIAU-Bk.otf') format('woff2'),
+				 url('assets/css/HalyardDis_ISIAU-Bk.otf') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face{
+			font-family: 'CustomFont2';
+			src: url('assets/css/helvetica-pixelated.otf') format('woff2'),
+				 url('assets/css/helvetica-pixelated.otf') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+		body {
+			font-family: 'CustomFont', sans-serif;
+		}
+		
+		.filetto {
+			border-top: solid 1px rgb(255, 255, 255);
+		}
+		#FontButton {
+			margin: 20px;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			background-color: transparent;
+			border: none;
+			outline: none;
+		}
+		a{
+			color:black;
+		}
+		#FontButton img {
+            width: 80px;
+        }
+        #FontButton img.hover {
+            display: none;
+        }
+        #FontButton:hover img.default {
+            display: none;
+        }
+        #FontButton:hover img.hover {
+            display: inline-block;
+        }
+
+        body {
+            font-family: 'CustomFont', sans-serif;
+			background-color:black
+        }
+
+       
+     
+		h2{    
+
+    color:#ffffff;
+    text-align:center;
+}
+#pp {
+    color: #ffffff;
+    font-size: 17;
+    
+    }
+	</style>
+	<script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js">
+		
+	</script>
+ 
+  
+
+</head>
+<body>
+	<div class="contenitore">
+		<nav class="navbar navbar-custom">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">Home</a>
+				<a class="navbar-brand" href="storia.html">Storia</a>
+				<a class="navbar-brand" href="mate.html">Applicazione</a>
+				<a class="navbar-brand" href="https://pithese.github.io/RandomU/">Random U</a>
+				<button id="FontButton">
+					<img src="icons/buttonAA.png" class="default" title="fontbutton" >
+					<img src="icons/buttonAA2.png" class="hover" title="fontbutton" >
+				</button>
+			</div>
+		</nav>
+
+		<!-- --------------------------------------------------------------------- -->
+		<h1>dither u</h1>
+
+		<!-- --------------------------------------------------------------------- -->
+		
+	
+		
+		<br><br><br><br><br><br><br><br>
+		
+			<center>
+		<iframe scrolling=no frameborder=0 width=1055 height=800 src="assets/tools/TOOL/"></iframe>
+	</center>
+		
+		
+	<footer class="white-footer">
+		<div class="footer" >
+			<br><br>
+			<div class="black-text">
+				<div class="row">
+					<div class="column">
+						<h3>Bibliografia & Sitografia</h3>
+						<p>
+							<br>
+							<a href="https://www.youtube.com/watch?v=0L2n8Tg2FwI">Coding Challenge #90: Floyd-Steinberg Dithering</a>
+							<br>
+							<a href="https://www.youtube.com/watch?v=9zsaegcL_84">“A Brief Discussion about Dithering”</a>
+							<br>
+							<a href="https://www.youtube.com/watch?v=IviNO7iICTM">Ordered Dithering - Computerphile</a>
+							<br>
+							<a href="https://it.wikipedia.org/wiki/Dithering">Wikipedia Dithering</a>
+							<br>
+							<a href="https://en.wikipedia.org/wiki/Binary_image">Wikipedia Binary Image</a>
+							<br>
+							<a href="https://it.wikipedia.org/wiki/Schema_Bayer">Wikipedia Bayer</a>
+							<br>
+							<a href="https://thesis.unipd.it/retrieve/4e4ab4cc-6697-4dcf-8712-bd5a34c270fa/DalCastello_Giovanni.pdf">pdf on modern applications of dithering</a>
+						</p>
+					</div>
+					<div class="column">
+						<h3>About</h3>
+						<br>
+						<p>Sito progettato e sviluppato da Tommaso Aulopi e Giacomo Pisani con l'obbiettivo di ricerca e divulgazione sul tema del dithering.
+							 I tools presenti nel sito sono stati realizzati con p5.js<br><br> Versione 1.0</p>
+					</div>
+					<div class="column">
+						<h3>Info</h3>
+						<br>
+						<p>Matematica per il design<br>Prof. Andreas Gysin<br>a.a. 2023/2024<br>ISIA Urbino</p>
+					</div>
+				</div>
+			</div>
+			<br><br>
+		</div>
+	</footer>
+</div>
+
+<script>
+	let pixel = false;
+	document.getElementById('FontButton').addEventListener('click', () => {
+		if (pixel) {
+			document.body.style.fontFamily = 'CustomFont, sans-serif';
+			
+		} else {
+			document.body.style.fontFamily = 'CustomFont2, sans-serif';
+			
+		}
+		pixel = !pixel;
+	});
+</script>
+
+		
+		
+</body>
+</html>

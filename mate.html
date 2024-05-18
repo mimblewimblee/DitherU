@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Dithering_U</title>
+	<meta name="author"      content="Tommaso Aulopi, Giacomo Pisani">
+	<meta name="description" content="Titolo Pagina: Applicazione del Dithering">
+	<meta name="viewport"    content="width=device-width, initial-scale=1">
+	<link rel="icon"         href="./icons/Icona_1.png"  type="image/png">
+	
+	<link rel="manifest"     href="./manifest.json">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link rel="stylesheet"   href="./assets/css/main.css">
+	
+	
+	<style>
+		.navbar-custom {
+    background-color: black;
+    padding-top: 0px; /* Adjust the top padding */
+    padding-bottom: 0px; /* Adjust the bottom padding */
+}
+
+.navbar-custom a {
+    color: white;
+    padding-top: 0px; /* Adjust the top padding */
+    padding-bottom: 0px; /* Adjust the bottom padding */
+}
+		  .slider-example-opacity-and-size {
+            --default-handle-width: 100px;
+          
+        }
+		@font-face {
+			font-family: 'CustomFont';
+			src: url('assets/css/HalyardDis_ISIAU-Bk.otf') format('woff2'),
+				 url('assets/css/HalyardDis_ISIAU-Bk.otf') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face{
+			font-family: 'CustomFont2';
+			src: url('assets/css/helvetica-pixelated.otf') format('woff2'),
+				 url('assets/css/helvetica-pixelated.otf') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+
+        body {
+            font-family: 'CustomFont', sans-serif;
+		
+			color:black;
+			background-color: white;
+        }
+		footer{
+			
+		
+			background-color: rgb(0, 0, 0);
+			
+		}
+		
+		.white-footer {
+			color:white;
+	background-color: #000000;
+	padding: 20px; /* Ridotto il padding */
+	margin-top: 0; /* Rimosso il margine superiore */
+}
+.filetto {
+	border-top: solid 1px rgb(0, 0, 0);
+}
+
+		#FontButton {
+			margin: 20px;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			background-color: transparent;
+			border: none;
+			outline: none;
+		}
+		#FontButton img {
+            width: 80px;
+        }
+        #FontButton img.hover {
+            display: none;
+        }
+        #FontButton:hover img.default {
+            display: none;
+        }
+        #FontButton:hover img.hover {
+            display: inline-block;
+        }
+		a{
+			color:white;
+		}
+	</style>
+	<script
+	defer
+	src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"
+  ></script>
+  <link
+	rel="stylesheet"
+	href="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/styles.css"
+  />
+  
+
+</head>
+<body>
+	<div class="contenitore">
+		<nav class="navbar navbar-custom">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">Home</a>
+				<a class="navbar-brand" href="storia.html">Storia</a>
+				<a class="navbar-brand" href="mate.html">Applicazione</a>
+				<a class="navbar-brand" href="https://pithese.github.io/RandomU/">Random U</a>
+				<button id="FontButton">
+					<img src="icons/buttonAA.png" class="default" title="fontbutton" >
+					<img src="icons/buttonAA2.png" class="hover" title="fontbutton" >
+				</button>
+			</div>
+		</nav>
+
+	<div class="contenitore">
+
+		<!-- --------------------------------------------------------------------- -->
+
+		<header>
+			<span></span>
+			<h1>Applicazione Matematica</h1>
+		</header>
+
+		<!-- --------------------------------------------------------------------- -->
+
+		<section class="filetto">
+			<h4 class="titolo-sezione">Applicazioni</h4>
+			<div class="contenuto-sezione">
+				<p>
+					Uno dei campi in cui il dithering ha trovato maggiore applicazione è sicuramente il campo 
+					dell’elaborazione delle immagini, spesso dovuto al fatto che le immagini originali vengono 
+					generate ad alta risoluzione e devono poi essere rappresentate in apparecchiature a risoluzione 
+					minore, a causa del limite tecnologico del dispositivo oppure per ridurne il peso abbassando 
+					la gamma di colori in una palette di tonalità minori  e simulando successivamente le sfumature 
+					di colori mancanti.
+					<br><br><br>
+					<img src="assets/img/all.png"width="780">
+					<br><br><br>
+
+					Un altro uso comune del dithering è la conversione di un'immagine in scala di grigi in bianco e nero, 
+					in modo che la densità dei punti neri nella nuova immagine si avvicini al livello di grigio medio 
+					dell'originale.
+					<br>		<br>
+					<img src="assets/img/Ordered_4x4_Bayer_matrix_dithering.png"width="520">
+					<br>		<br>
+
+					Applicando il dithering è possibile rappresentare immagini con gamma di valori minori sfruttando 
+					i vantaggi dell'occhio umano, che tende a mescolare due colori se sono posti troppo vicini (acutezza visiva) 
+					e di conseguenza rende meno evidente l’errore facendolo apparire come un disturbo generalizzato che consente la 
+					distinzione dall’informazione principale rappresentata.
+					<br><br>
+				</p>
+				
+			</div>
+		</section>
+
+		<!-- --------------------------------------------------------------------- -->
+
+		<section class="filetto">
+			<h4 class="titolo-sezione">Immagini binarie</h4>
+			<div class="contenuto-sezione">
+				<p>
+					Un’immagine binaria è una immagine digitale che ha due possibili valori per ogni pixel, 
+					che corrispondono a due colori, solitamente bianco e nero. Ciò significa che ogni pixel 
+					viene memorizzato come un singolo bit, ovvero uno 0 o 1. I nomi bianco e nero o monocromatico 
+					vengono spesso utilizzati per questo concetto, ma possono anche designare qualsiasi immagine 
+					che abbia solo un campione per pixel, come le immagini in scala di grigi. 
+					Nella fase di quantizzazione i pixel vengono normalizzati, ad ogni pixel viene cioè attribuito 
+					un singolo valore tra 0 o 1.
+
+				</p>
+				<img-comparison-slider class="slider-example-opacity-and-size">
+  <img slot="first" width="600" src="assets/img/1bit/1.png">
+  <img slot="second" width="600" src="assets/img/1bit/2.png">
+</img-comparison-slider>
+			</div>
+		</section>
+
+		<!-- --------------------------------------------------------------------- -->
+
+		<section class="filetto">
+			<h4 class="titolo-sezione">Ordinato</h4>
+			<div class="contenuto-sezione">
+				<p>
+					Il dithering di Bayer o dithering ordinato è uno dei primi algoritmi sviluppati e consiste 
+					nell’applicare alla matrice di pixel di cui è composta l’immagine una matrice M di dimensioni 
+					arbitrarie prima della fase di quantizzazione, dove in alcuni casi il valore aggiunto a ciascun 
+					pixel dai valori della matrice potrebbe determinare il passaggio alla soglia maggiore. 
+					Spesso la matrice M scelta è quadrata di dimensioni multiple di 2 e prende il nome di matrice di Bayer; 
+					la regola generale per la sua composizione consiste nel riempire la matrice di valori progressivi:
+				</p>
+				<img src="assets/img/matrice_0123.png"width="200">
+				<p>
+					e successivamente riordinarla in modo tale che gli elementi adiacenti a ciascun indice abbiano valori 
+					il più distante possibile, per esempio la matrice precedente potrebbe essere riordinata in questo modo:
+				</p>
+				<img src="assets/img/matrice_3120.png"width="200">
+				<p>
+					La matrice M può anche essere ruotata o invertita in modo speculare senza alterare la funzionalità dell’algoritmo, 
+					e le matrici di Bayer possono essere generate in modo ricorsivo attraverso la formula:
+				</p>
+				<img src="assets/img/matrice_bayer_ricorsiva.png"width="520">
+				<br><br>
+				<p>
+					Poi il valore di ogni singolo pixel della griglia viene moltiplicato per la dimensione della matrice 
+					(nel caso dell’esempio x4), arrotondato e sommato alla matrice e quindi quantizzata:
+					<br><br>
+				</p>
+				<img src="assets/img/ordered_dith.png"width="600">
+				<br><br><br>
+				<p>
+					La matrice di grandezza 2x2 è la forma più base della matrice di bayer. Aumentando la grandezza 
+					della matrice (4x4, 8x8) si va direttamente ad aumentare la profondità dell’immagine quantizzata. 
+					Questo algoritmo presenta il grosso vantaggio della semplicità di implementazione, tuttavia l’errore 
+					appare come una sorta di trama diversa per ogni matrice che si ripete periodicamente lungo l’immagine 
+					impartendo un aspetto innaturale. Questo effetto appare molto evidente utilizzando soltanto due colori. 
+					<iframe scrolling=no frameborder=0 width=1500 height=600 src="assets/tools/ORDERED/"></iframe>
+				</p>
+			
+				<img-comparison-slider class="slider-example-opacity-and-size">
+  <img slot="first" width="600" src="assets/img/bayer/1.png">
+  <img slot="second" width="600" src="assets/img/bayer/2.png">
+</img-comparison-slider>
+			</div>
+			
+		</section>
+
+		<!-- --------------------------------------------------------------------- -->
+
+		<section class="filetto">
+			<h4 class="titolo-sezione">Random</h4>
+			<div class="contenuto-sezione">
+				<p>
+					In opposizione al dithering ordinato è nato il dithering casuale in cui gli indici della matrice M 
+					complessiva dei valori applicati all’immagine originale sono calcolati in modo casuale; questo impedisce 
+					la creazione di artefatti in quanto non vi è nessun segno di una struttura ripetuta secondo un determinato 
+					schema, tuttavia la casualità dei valori genera una forma di rumore bianco distribuito in tutta l’immagine 
+					che appare granulosa e inaccurata. Questo algoritmo si presta molto bene in applicazioni in cui la non 
+					presenza di artefatti supera di importanza la fedeltà dei toni all’immagine originale. Per esempio 
+					un’immagine contenente un gradiente di sfumature di tonalità dal bianco al nero viene visualizzato meglio 
+					rispetto all’algoritmo di dithering ordinato in cui le trame che si ripetono costantemente sono decisamente 
+					visibili e vengono associate ad un rumore a bassa frequenza.
+				</p>
+				<img-comparison-slider class="slider-example-opacity-and-size">
+  <img slot="first" width="600" src="assets/img/random/1.png">
+  <img slot="second" width="600" src="assets/img/random/2.png">
+</img-comparison-slider>
+			</div>
+		</section>
+
+<!-- --------------------------------------------------------------------- -->
+
+		<section class="filetto">
+			<h4 class="titolo-sezione">Floyd Steinberg</h4>
+			<div class="contenuto-sezione">
+				<p>
+					Dato che l’immagine di input è in scala di grigi e l’immagine di output sarà unicamente in bianco e nero 
+					i pixel uscenti avranno un margine di errore rispetto a quelli grigi che viene chiamato errore di discrepanza. 
+					Per ottenere un buon risultato di dithering l’errore verrà diffuso nei pixel intorno. In particolare 
+					l’algoritmo effettua il calcolo della distribuzione dell’errore partendo dal pixel in alto a sinistra 
+					e si muove da sinistra a destra e dall’alto al basso, il margine di errore all’interno della matrice verrà 
+					diviso in parti diverse e distribuito verso destra e verso il basso:
+				</p>
+				<img src="assets/img/Floyd.png"width="700">
+				<p>
+					la distribuzione dell’errore è calcolata tramite dei coefficienti proporzionali all’errore ben definiti: 
+					5/16 al pixel sottostante, 7/16 al pixel a destra, 3/16 al pixel in basso a sinistra e 1/16 al pixel 
+					in basso a destra. In forma matriciale considerando il pixel in questione al centro la matrice dei 
+					coefficienti di distribuzione è:
+				</p>
+				<img src="assets/img/matrice_floyd.png"width="250">
+				<br>	<br>	<br>
+				<img-comparison-slider class="slider-example-opacity-and-size">
+				
+  <img slot="first" width="600" src="assets/img/floyd/1.png">
+  <img slot="second" width="600" src="assets/img/floyd/2.png">
+</img-comparison-slider>
+			</div>
+		</section>
+
+
+<!-- --------------------------------------------------------------------- -->
+<section class="filetto">
+	<h4 class="titolo-sezione">Floyd Steinberg (RGB)</h4>
+	<div class="contenuto-sezione">
+		
+		<p>Ridurre la profondità del colore di un'immagine spesso causa effetti collaterali indesiderati. 
+			Se l'immagine originale è una fotografia, probabilmente i colori saranno migliaia, o addirittura milioni. 
+			Limitarne il numero fa, ovviamente, perdere qualità all'immagine.
+			Molti fattori possono modificare la qualità risultante,
+			 probabilmente il più significativo di questi è la "larghezza" 
+			 della tavolozza usata. Ad esempio, un'immagine di alta qualità può essere ridotta 
+			 con una tavolozza a 256 colori (Web-safe colors). Se i colori dei pixel originali venissero semplicemente spostati nel colore 
+			 "più vicino" tra quelli disponibili, non avremmo applicazione del dithering. Normalmente, questo approccio causa aree di colore
+			  uniforme e perdita di dettaglio, generando macchie di colore molto diverse dall'originale. Le aree sfumate appaiono a strisce 
+			  (effetto banding). L'applicazione del dithering può aiutare a limitare questi artefatti visivi e, di solito, crea un'immagine più simile all'originale. 
+			  Il dithering permette di ridurre il banding e la "piattezza" dei colori.
+			</p>
+
+	
+		<img-comparison-slider class="slider-example-opacity-and-size">
+				
+  <img slot="first" width="600" src="assets/img/floydcolor/1.png">
+  <img slot="second" width="600" src="assets/img/floydcolor/2.png">
+</img-comparison-slider>
+		<br>
+	</div>
+	
+	
+</section>
+<!-- --------------------------------------------------------------------- -->
+<footer class="white-footer">
+	<div class="footer" >
+		<br><br>
+		<div class="white-font">
+			<div class="row">
+				<div class="column">
+					<h3>Bibliografia & Sitografia</h3>
+					<p>
+						<br>
+						<a href="https://www.youtube.com/watch?v=0L2n8Tg2FwI">Coding Challenge #90: Floyd-Steinberg Dithering</a>
+						<br>
+						<a href="https://www.youtube.com/watch?v=9zsaegcL_84">“A Brief Discussion about Dithering”</a>
+						<br>
+						<a href="https://www.youtube.com/watch?v=IviNO7iICTM">Ordered Dithering - Computerphile</a>
+						<br>
+						<a href="https://it.wikipedia.org/wiki/Dithering">Wikipedia Dithering</a>
+						<br>
+						<a href="https://en.wikipedia.org/wiki/Binary_image">Wikipedia Binary Image</a>
+						<br>
+						<a href="https://it.wikipedia.org/wiki/Schema_Bayer">Wikipedia Bayer</a>
+						<br>
+						<a href="https://thesis.unipd.it/retrieve/4e4ab4cc-6697-4dcf-8712-bd5a34c270fa/DalCastello_Giovanni.pdf">pdf on modern applications of dithering</a>
+					</p>
+				</div>
+				<div class="column">
+					<h3>About</h3>
+					<br>
+					<p>Sito progettato e sviluppato da Tommaso Aulopi e Giacomo Pisani con l'obbiettivo di ricerca e divulgazione sul tema del dithering.
+						 I tools presenti nel sito sono stati realizzati con p5.js<br><br> Versione 1.0</p>
+				</div>
+				<div class="column">
+					<h3>Info</h3>
+					<br>
+					<p>Matematica per il design<br>Prof. Andreas Gysin<br>a.a. 2023/2024<br>ISIA Urbino</p>
+				</div>
+			</div>
+		</div>
+		<br><br>
+	</div>
+</footer>
+</div>
+
+<script>
+let pixel = false;
+document.getElementById('FontButton').addEventListener('click', () => {
+	if (pixel) {
+		document.body.style.fontFamily = 'CustomFont, sans-serif';
+		
+	} else {
+		document.body.style.fontFamily = 'CustomFont2, sans-serif';
+		
+	}
+	pixel = !pixel;
+});
+</script>
+
+
+
+
+</body>
+</html>

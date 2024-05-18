@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Dithering_U</title>
+	<meta name="author" content="Tommaso Aulopi, Giacomo Pisani">
+	<meta name="description" content="Titolo Pagina: descrizione">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="icon" href="./icons/Icona_2.png" type="image/png">
+	<link rel="icon" href="./icons/icon_256.png" type="image/png">
+	<link rel="manifest" href="./manifest.json">
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+	<link rel="stylesheet" href="./assets/css/main.css">
+	<style>
+		.navbar-custom {
+			background-color: black;
+			
+			
+		}
+		.navbar-custom a {
+			color: white;
+			
+		}
+		@font-face {
+			font-family: 'CustomFont';
+			src: url('assets/css/HalyardDis_ISIAU-Bk.otf') format('woff2'),
+				 url('assets/css/HalyardDis_ISIAU-Bk.otf') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+		@font-face{
+			font-family: 'CustomFont2';
+			src: url('assets/css/helvetica-pixelated.otf') format('woff2'),
+				 url('assets/css/helvetica-pixelated.otf') format('woff');
+			font-weight: normal;
+			font-style: normal;
+		}
+		body {
+			font-family: 'CustomFont', sans-serif;
+		}
+		
+		.filetto {
+			border-top: solid 1px rgb(255, 255, 255);
+		}
+		#FontButton {
+			margin: 20px;
+			padding: 10px 20px;
+			font-size: 16px;
+			cursor: pointer;
+			background-color: transparent;
+			border: none;
+			outline: none;
+		}
+		#FontButton img {
+            width: 80px;
+        }
+        #FontButton img.hover {
+            display: none;
+        }
+        #FontButton:hover img.default {
+            display: none;
+        }
+        #FontButton:hover img.hover {
+            display: inline-block;
+        }
+		a{
+			color:black;
+		}
+	</style>
+	<script defer src="https://cdn.jsdelivr.net/npm/img-comparison-slider@8/dist/index.js"></script>
+</head>
+<body>
+
+	<div class="contenitore">
+		<nav class="navbar navbar-custom">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="index.html">Home</a>
+				<a class="navbar-brand" href="storia.html">Storia</a>
+				<a class="navbar-brand" href="mate.html">Applicazione</a>
+				<a class="navbar-brand" href="https://pithese.github.io/RandomU/">Random U</a>
+				<button id="FontButton">
+					<img src="icons/buttonAA.png" class="default" title="fontbutton" >
+					<img src="icons/buttonAA2.png" class="hover" title="fontbutton" >
+				</button>
+			</div>
+		</nav>
+		<header>
+			<span></span>
+			<h1>Origine del dithering</h1>
+		</header>
+		<section class="filetto">
+			<h4 class="titolo-sezione">Introduzione</h4>
+			<div class="contenuto-sezione">
+				<div class="text-left">
+					<p><b>Il dithering </b>, nella elaborazione numerica di segnali,
+						 è una forma di rumore a media nulla che viene volontariamente aggiunto ai campioni con l'obiettivo di ridurre l’errore di quantizzazione.</p>
+									<br><br>
+					<img src="assets/img/dithered-image copia.png" width="500">
+				</div>
+				<br><br>
+				<br><br>
+			
+					<p>Nella conversione analogico-digitale, la differenza tra il segnale analogico reale e il valore digitale quantizzato dello stesso viene chiamata errore di quantizzazione o distorsione di quantizzazione. Questo errore è dovuto all'arrotondamento o al troncamento del segnale digitalizzato.</p>
+					<img src="assets/img/error_2.png" width="580"></p>
+					<br>
+		<p>Il dithering viene usato in computer grafica per creare l'illusione della profondità di colore in immagini dotate di una tavolozza limitata 
+			(quantizzazione del colore) o quando le immagini vengono convertite dalla scala di grigi in bianco e nero. In un'immagine sottoposta a dithering,
+			 i colori non disponibili vengono approssimati dalla distribuzione dei pixel colorati con le tinte ridotte disponibili. L'occhio umano percepisce
+			  la diffusione come un amalgama dei colori. Il dithering è simile alla tecnica chiamata halftone nella stampa in cui si usava un retino stocastico.
+			 Le immagini trattate con il dithering, particolarmente quelle in cui vengono usati pochi colori, possono spesso apparire granulari, o composte da puntini.</p>
+				
+			</div>
+		</section>
+		<section class="filetto">
+			<h4 class="titolo-sezione">Storia</h4>
+			<div class="contenuto-sezione">
+				
+				<p>Questa tecnica prende il nome dal fenomeno ’dither’ (tremolío) e nasce nella seconda guerra mondiale: gli aerei anti bombardieri 
+					utilizzavano dei calcolatori meccanici per calcolare rotte e traiettorie di lancio per i bombardamenti. 
+					Questi calcolatori erano costituiti da scatole in metallo con all’interno un numero elevato di meccanismi, 
+					che partendo da determinati valori in input riuscivano a calcolare la posizione che avrebbe avuto il bersaglio 
+					quando il proiettile sarebbe arrivato a destinazione. Durante il loro utilizzo gli ingegneri dell’epoca si accorsero 
+					che questi sistemi meccanici di calcolo erano decisamente 
+					più precisi durante il volo che a terra, e arrivarono alla conclusione 
+					che le vibrazioni prodotte dall’aereo riuscivano ad influenzare positivamente 
+					il meccanismo in un movimento più fluido e continuato.</p>
+					<br><br>
+				<img src="assets/img/mac.png" width="300" align="left" hspace="40">
+				<p>Nei primi anni del computing, i monitor erano spesso monocromatici o 
+					supportavano solo un piccolo numero di colori. Ad esempio, i primi sistemi come il Commodore 64, l’Apple II e i computer IBM PC
+					 avevano capacità grafiche molto limitate. Per simulare la profondità in un’immagine i programmatori utilizzavano il dithering per
+					  mescolare i pixel creando mescolanze ottiche che simulavano gamme/tonalità di colori che non potevano essere raggiunte.</p>
+				<br>
+			</div>
+			
+			
+		</section>
+		<img src="assets/img/spitfire.png" width="300" align="right" >
+		<img src="assets/img/cloud_w:b.png" width="1380em" height="700em">
+		<footer class="white-footer">
+			<div class="footer" >
+				<br><br>
+				<div class="black-text">
+					<div class="row">
+						<div class="column">
+							<h3>Bibliografia & Sitografia</h3>
+							<p>
+								<br>
+								<a href="https://www.youtube.com/watch?v=0L2n8Tg2FwI">Coding Challenge #90: Floyd-Steinberg Dithering</a>
+								<br>
+								<a href="https://www.youtube.com/watch?v=9zsaegcL_84">“A Brief Discussion about Dithering”</a>
+								<br>
+								<a href="https://www.youtube.com/watch?v=IviNO7iICTM">Ordered Dithering - Computerphile</a>
+								<br>
+								<a href="https://it.wikipedia.org/wiki/Dithering">Wikipedia Dithering</a>
+								<br>
+								<a href="https://en.wikipedia.org/wiki/Binary_image">Wikipedia Binary Image</a>
+								<br>
+								<a href="https://it.wikipedia.org/wiki/Schema_Bayer">Wikipedia Bayer</a>
+								<br>
+								<a href="https://thesis.unipd.it/retrieve/4e4ab4cc-6697-4dcf-8712-bd5a34c270fa/DalCastello_Giovanni.pdf">pdf on modern applications of dithering</a>
+							</p>
+						</div>
+						<div class="column">
+							<h3>About</h3>
+							<br>
+							<p>Sito progettato e sviluppato da Tommaso Aulopi e Giacomo Pisani con l'obbiettivo di ricerca e divulgazione sul tema del dithering.
+								 I tools presenti nel sito sono stati realizzati con p5.js<br><br> Versione 1.0</p>
+						</div>
+						<div class="column">
+							<h3>Info</h3>
+							<br>
+							<p>Matematica per il design<br>Prof. Andreas Gysin<br>a.a. 2023/2024<br>ISIA Urbino</p>
+						</div>
+					</div>
+				</div>
+				<br><br>
+			</div>
+		</footer>
+	</div>
+	
+	<script>
+		let pixel = false;
+		document.getElementById('FontButton').addEventListener('click', () => {
+			if (pixel) {
+				document.body.style.fontFamily = 'CustomFont, sans-serif';
+				
+			} else {
+				document.body.style.fontFamily = 'CustomFont2, sans-serif';
+				
+			}
+			pixel = !pixel;
+		});
+	</script>
+
+</html>
