@@ -287,12 +287,38 @@
 
 <!-- --------------------------------------------------------------------- -->
 <section class="filetto">
-	<h4 class="titolo-sezione">Floyd Steinberg (RGB)</h4>
+	<h4 class="titolo-sezione">RGB</h4>
 	<div class="contenuto-sezione">
 		
 		<p>Ridurre la profondità del colore di un'immagine spesso causa effetti collaterali indesiderati. 
 			Se l'immagine originale è una fotografia, probabilmente i colori saranno migliaia, o addirittura milioni. 
 			Limitarne il numero fa, ovviamente, perdere qualità all'immagine.
+			<br><br>
+			<img src="assets/img/rgb/Senza titolo-3.png"width="780">
+			<br><br>
+			<p>Ogni pixel, diversamente dalle immagini in scala di grigio dotate da un solo valore che varia 0 a 255,
+				 sarà dotato di tre valori RGB (256,256,256). Andando quindi a quantizzare le possibilità per ogni pixel (come nel caso sottostante), si arriverà ad avere un numero 
+				 minore di colore e di conseguenza un'immagine "bruciata".  </p>
+			<img-comparison-slider class="slider-example-opacity-and-size">
+			<img slot="first" width="600" src="assets/img/burn/1.jpg">
+			<img slot="second" width="600" src="assets/img/burn/2.jpg">
+		  </img-comparison-slider>
+
+		  <br><br>
+		  Applicando quindi lo stesso schema di bayer si potranno creare dei pattern di di pixel di colore
+		  diverso atte a simulare gamme non presenti. Stessa cosa vale con l'algoritmo di Floyd-Steinberg, la diffusione crea un risultato migliore.
+		  <br><br>
+		  <img-comparison-slider class="slider-example-opacity-and-size">
+			<img slot="first" width="500" src="assets/img/bayerrgb/1.jpg">
+			<img slot="second" width="500" src="assets/img/bayerrgb/2.png">
+		  </img-comparison-slider>
+		  
+		<img-comparison-slider class="slider-example-opacity-and-size">
+				
+		<img slot="first" width="500" src="assets/img/floydcolor/1.png">
+		<img slot="second" width="500" src="assets/img/floydcolor/2.png">
+	  </img-comparison-slider>
+		  <br><br>
 			Molti fattori possono modificare la qualità risultante,
 			 probabilmente il più significativo di questi è la "larghezza" 
 			 della tavolozza usata. Ad esempio, un'immagine di alta qualità può essere ridotta 
@@ -304,11 +330,6 @@
 			</p>
 
 	
-		<img-comparison-slider class="slider-example-opacity-and-size">
-				
-  <img slot="first" width="600" src="assets/img/floydcolor/1.png">
-  <img slot="second" width="600" src="assets/img/floydcolor/2.png">
-</img-comparison-slider>
 		<br>
 	</div>
 	
@@ -342,7 +363,7 @@
 				<div class="column">
 					<h3>About</h3>
 					<br>
-					<p>Sito progettato e sviluppato da Tommaso Aulopi e Giacomo Pisani con l'obbiettivo di ricerca e divulgazione sul tema del dithering.
+					<p>Sito progettato e sviluppato da Tommaso Aulopi e Giacomo Pisani con l'obiettivo di ricerca e divulgazione sul tema del dithering.
 						 I tools presenti nel sito sono stati realizzati con p5.js<br><br> Versione 1.0</p>
 				</div>
 				<div class="column">
