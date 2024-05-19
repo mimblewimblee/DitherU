@@ -1,6 +1,7 @@
 # DitherU
 
 Tommaso Aulopi & Giacomo Pisani
+
 Progetto e presentazione sul tema del Dithering
 ISIA URBINO
 Matematica per il design 
